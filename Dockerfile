@@ -66,7 +66,7 @@ RUN . /clone.sh depth-anythhing-v2 https://github.com/kijai/ComfyUI-DepthAnythin
 RUN . /clone.sh ComfyUI-GGUF https://github.com/city96/ComfyUI-GGUF 5875c52f59baca3a9372d68c43a3775e21846fe0
 RUN . /clone.sh bitsandbytes-nf4 https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4.git 72f439164a7eb2e4e30bb780d69cd33be2b3ae8d
 RUN . /clone.sh pulid-flux https://github.com/katalist-ai/ComfyUI_PuLID_Flux_ll.git 8b9e00ca412ce3a6a2d9abe0c30d0f4b82e69ba0
-
+RUN . /clone.sh comfyui_controlnet_aux https://github.com/katalist-ai/comfyui_controlnet_aux.git 0bd9c891fc06d2e4b0d5f065955ad2c443d4bf7d
 
 # Katalist custom extensions
 RUN . /clone.sh comfyui-nsfw-detection https://github.com/katalist-ai/comfyUI-nsfw-detection 94291ebcd9b9aee2c1996c22dc1404009ceb4bc4

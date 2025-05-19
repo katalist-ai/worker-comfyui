@@ -10,3 +10,8 @@ runpod_worker_comfy:
   upscale_models: models/upscale_models/
   vae: models/vae/
   unet: models/unet/
+  pulid: models/pulid/
+  onnx: models/onnx/
+  insightface: models/insightface/
+  ultralytics: models/ultralytics/
+  depthanything: models/depthanything/
