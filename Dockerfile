@@ -68,7 +68,7 @@ RUN . /clone.sh ComfyUI-Impact-Subpack https://github.com/ltdrdata/ComfyUI-Impac
 # Katalist custom extensions
 RUN . /clone.sh comfyui-nsfw-detection https://github.com/katalist-ai/comfyUI-nsfw-detection 94291ebcd9b9aee2c1996c22dc1404009ceb4bc4
 RUN . /clone.sh katalist-comfy-tools https://github.com/katalist-ai/comfy-tools.git 9b3936e41dd6d964b6fbe047c35fac7a34f3dcad
-RUN . /clone.sh FaceAnalysis https://github.com/katalist-ai/ComfyUI_FaceAnalysis.git 9749c375180d6d25e4420ff9f750c8681c50557a
+RUN . /clone.sh FaceAnalysis https://github.com/cubiq/ComfyUI_FaceAnalysis 98708e1e1916b0cfe3335f61aa63c5b749088bb9
 
 # Stage 3: Final image
 FROM base AS final
@@ -114,9 +114,11 @@ RUN uv pip install runpod requests websocket-client --system
 # Add a symlink for /comfyui/models to runpod-volume/models
 RUN rm -rf /comfyui/models && ln -s /runpod-volume/models /comfyui/models
 
-
+RUN ls
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
+ADD src/starter.py ./
+ADD src/start_workflow.json ./
 RUN chmod +x /start.sh
 
 # Set the default command to run when starting the container
