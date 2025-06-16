@@ -1,6 +1,6 @@
 services:
   comfyui-worker:
-    image: worker-comfyui:dev
+    image:  katalist-comfy/runpod-comfy:latest
     pull_policy: never
     deploy:
       resources:

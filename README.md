@@ -1,3 +1,21 @@
+# Katalist README
+
+This is a baked container script - place the models in `data\runpod-volume\models`
+
+The models can be downloaded from this huggingface repo [https://huggingface.co/8clabs/models/tree/main](here).
+
+Any new nodes that needs to be added can be added at `Dockerfile`
+
+You only need to know only 4 commands
+
+`docker buil -t katalist-comfy/runpod-comfy .`
+
+this builds the container and `docker-compose up` helps you with local testing.
+
+This tags the image `docker tag katalist-comfy/runpod-comfy:latest katalistai/katalist-images:tag`
+
+Push the image - `docker push katalistai/katalist-images:tag`
+
 # worker-comfyui
 
 > [ComfyUI](https://github.com/comfyanonymous/ComfyUI) as a serverless API on [RunPod](https://www.runpod.io/)
