@@ -72,7 +72,7 @@ RUN wget https://huggingface.co/briaai/RMBG-1.4/resolve/main/model.pth
 
 WORKDIR ${ROOT}
 
-COPY --from=download /extensions/ ${ROOT}/custom_nodes/
+COPY --from=download /custom_nodes/ ${ROOT}/custom_nodes/
 WORKDIR custom_nodes
 RUN --mount=type=cache,target=/root/.cache/pip \
   cd was-node-suite-comfyui && pip install -r requirements.txt && \
