@@ -65,10 +65,11 @@ RUN . /clone.sh pulid-flux https://github.com/katalist-ai/ComfyUI_PuLID_Flux_ll.
 RUN . /clone.sh ComfyUI-Impact-Pack https://github.com/ltdrdata/ComfyUI-Impact-Pack 092310bc8f1116a8e237e8fe142c853281903a96
 RUN . /clone.sh ComfyUI-Impact-Subpack https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git 74db20c95eca152a6d686c914edc0ef4e4762cb8
 RUN . /clone.sh ComfyUI-Florence https://github.com/kijai/ComfyUI-Florence2.git de485b65b3e1b9b887ab494afa236dff4bef9a7e
+RUN . /clone.sh Comfy-WaveSpeed https://github.com/chengzeyi/Comfy-WaveSpeed.git 16ec6f344f8cecbbf006d374043f85af22b7a51d
 
 # Katalist custom extensions
 RUN . /clone.sh comfyui-nsfw-detection https://github.com/katalist-ai/comfyUI-nsfw-detection 94291ebcd9b9aee2c1996c22dc1404009ceb4bc4
-RUN . /clone.sh katalist-comfy-tools https://github.com/katalist-ai/comfy-tools.git 6575a26fa729385ff4da570e720212d5da4da039
+RUN . /clone.sh katalist-comfy-tools https://github.com/katalist-ai/comfy-tools.git 2dc2167b581935df8c264d1401133ae61a56782a
 RUN . /clone.sh FaceAnalysis https://github.com/cubiq/ComfyUI_FaceAnalysis 98708e1e1916b0cfe3335f61aa63c5b749088bb9
 
 # Stage 3: Final image
