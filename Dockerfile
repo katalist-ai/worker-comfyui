@@ -64,6 +64,7 @@ RUN . /clone.sh comfyui_controlnet_aux https://github.com/katalist-ai/comfyui_co
 RUN . /clone.sh pulid-flux https://github.com/katalist-ai/ComfyUI_PuLID_Flux_ll.git fbb1d5f38daade7ce314e6a8432e0a08cc0c22ec
 RUN . /clone.sh ComfyUI-Impact-Pack https://github.com/ltdrdata/ComfyUI-Impact-Pack 092310bc8f1116a8e237e8fe142c853281903a96
 RUN . /clone.sh ComfyUI-Impact-Subpack https://github.com/ltdrdata/ComfyUI-Impact-Subpack.git 74db20c95eca152a6d686c914edc0ef4e4762cb8
+RUN . /clone.sh ComfyUI-Florence https://github.com/kijai/ComfyUI-Florence2.git de485b65b3e1b9b887ab494afa236dff4bef9a7e
 
 # Katalist custom extensions
 RUN . /clone.sh comfyui-nsfw-detection https://github.com/katalist-ai/comfyUI-nsfw-detection 94291ebcd9b9aee2c1996c22dc1404009ceb4bc4
@@ -111,8 +112,10 @@ WORKDIR /
 # Install Python runtime dependencies for the handler
 RUN uv pip install runpod requests websocket-client --system
 
-# Add a symlink for /comfyui/models to runpod-volume/models
-RUN rm -rf /comfyui/models && ln -s /runpod-volume/models /comfyui/models
+# Add models to ComfyUI models directory
+ADD data/runpod-volume/models/ /tmp/models/
+RUN rm -rf /comfyui/models && mv /tmp/models /comfyui/models
+
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
 ADD src/starter.py ./
