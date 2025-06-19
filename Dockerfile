@@ -52,6 +52,10 @@ WORKDIR /comfyui
 COPY clone.sh /clone.sh
 RUN chmod +x /clone.sh
 
+# Add models to ComfyUI models directory
+ADD data/runpod-volume/models/ /tmp/models/
+RUN rm -rf /comfyui/models && mv /tmp/models /comfyui/models
+
 # Community extensions
 # RUN . /clone.sh ComfyUI_IPAdapter_plus https://github.com/cubiq/ComfyUI_IPAdapter_plus.git f904b4c3c3adbda990f32b90eb52e1924467c9ef # Line commented out by user
 RUN . /clone.sh comfyui-tooling-nodes https://github.com/Acly/comfyui-tooling-nodes.git e27580efcd9ef67427c853e6f671315e91b6786b
@@ -112,10 +116,6 @@ WORKDIR /
 
 # Install Python runtime dependencies for the handler
 RUN uv pip install runpod requests websocket-client --system
-
-# Add models to ComfyUI models directory
-ADD data/runpod-volume/models/ /tmp/models/
-RUN rm -rf /comfyui/models && mv /tmp/models /comfyui/models
 
 # Add application code and scripts
 ADD src/start.sh handler.py test_input.json ./
