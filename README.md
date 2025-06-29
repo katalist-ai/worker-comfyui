@@ -5,7 +5,10 @@ Steps to deploy the image:
 1. Make the directory - `data\runpod-volume\models`.
 2. place the models in `data\runpod-volume\models`. The models can be downloaded from this huggingface repo [https://huggingface.co/8clabs/models/tree/main](here).
 3. Any new nodes, update comfy that needs to be added can be added at `Dockerfile`
-4. Deploy
+4. Create the image using the 4 commands mentioned below
+5. Deploy the image by editing the endpoint version on runpod serverless
+
+### Creating image & pushing to Docker hub
 
 You only need to know only 4 commands to create the image
 
